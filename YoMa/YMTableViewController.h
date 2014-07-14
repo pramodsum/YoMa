@@ -1,5 +1,5 @@
 //
-//  YMViewController.h
+//  YMTableViewController.h
 //  YoMa
 //
 //  Created by Sumedha Pramod on 7/13/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YMViewController : UIViewController <UIGestureRecognizerDelegate>
+@interface YMTableViewController : UITableViewController <UIGestureRecognizerDelegate>
 
 @end

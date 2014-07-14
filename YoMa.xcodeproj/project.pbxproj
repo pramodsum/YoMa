@@ -21,6 +21,8 @@
 		49CD6DAA19734C0B009CF55B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CD6D8C19734C0B009CF55B /* UIKit.framework */; };
 		49CD6DB219734C0B009CF55B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49CD6DB019734C0B009CF55B /* InfoPlist.strings */; };
 		49CD6DB419734C0B009CF55B /* YoMaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CD6DB319734C0B009CF55B /* YoMaTests.m */; };
+		49CD6DBF19734E3A009CF55B /* YMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CD6DBE19734E3A009CF55B /* YMTableViewController.m */; };
+		49CD6DC519736EEB009CF55B /* YMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CD6DC419736EEB009CF55B /* YMTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		49CD6DAF19734C0B009CF55B /* YoMaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YoMaTests-Info.plist"; sourceTree = "<group>"; };
 		49CD6DB119734C0B009CF55B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49CD6DB319734C0B009CF55B /* YoMaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YoMaTests.m; sourceTree = "<group>"; };
+		49CD6DBD19734E3A009CF55B /* YMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMTableViewController.h; sourceTree = "<group>"; };
+		49CD6DBE19734E3A009CF55B /* YMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMTableViewController.m; sourceTree = "<group>"; };
+		49CD6DC319736EEB009CF55B /* YMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMTableViewCell.h; sourceTree = "<group>"; };
+		49CD6DC419736EEB009CF55B /* YMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,10 @@
 				49CD6D9A19734C0B009CF55B /* Main.storyboard */,
 				49CD6D9D19734C0B009CF55B /* YMViewController.h */,
 				49CD6D9E19734C0B009CF55B /* YMViewController.m */,
+				49CD6DBD19734E3A009CF55B /* YMTableViewController.h */,
+				49CD6DBE19734E3A009CF55B /* YMTableViewController.m */,
+				49CD6DC319736EEB009CF55B /* YMTableViewCell.h */,
+				49CD6DC419736EEB009CF55B /* YMTableViewCell.m */,
 				49CD6DA019734C0B009CF55B /* Images.xcassets */,
 				49CD6D8F19734C0B009CF55B /* Supporting Files */,
 			);
@@ -253,6 +263,8 @@
 				49CD6D9F19734C0B009CF55B /* YMViewController.m in Sources */,
 				49CD6D9919734C0B009CF55B /* YMAppDelegate.m in Sources */,
 				49CD6D9519734C0B009CF55B /* main.m in Sources */,
+				49CD6DC519736EEB009CF55B /* YMTableViewCell.m in Sources */,
+				49CD6DBF19734E3A009CF55B /* YMTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

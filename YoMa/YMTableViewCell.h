@@ -1,5 +1,5 @@
 //
-//  YMViewController.h
+//  YMTableViewCell.h
 //  YoMa
 //
 //  Created by Sumedha Pramod on 7/13/14.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YMViewController : UIViewController <UIGestureRecognizerDelegate>
+@interface YMTableViewCell : UITableViewCell
+
+@property (strong, nonatomic) IBOutlet UILabel *yomaLabel;
 
 @end
