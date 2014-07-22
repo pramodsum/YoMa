@@ -10,12 +10,23 @@
 #import "YMViewController.h"
 #import "YMTableViewCell.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define COLOR1        0x00bd9b
+#define COLOR2        0x1bcd6c
+#define COLOR3        0x2c97de
+#define COLOR4        0x33495f
+#define COLOR5        0x00a186
+#define COLOR6        0xf2c500
+#define COLOR7        0xd83728
+
 @interface YMTableViewController ()
 
 @end
 
 @implementation YMTableViewController {
     NSArray *yomas;
+    NSArray *colors;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -36,7 +47,14 @@
     gestureRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];//direction is set by default.
     //[gesture setNumberOfTouchesRequired:1];//default is 1
     [[self view] addGestureRecognizer:gestureRight];//this gets things rolling.
-    
+
+    if(yomas == nil) {
+        yomas = [[NSArray alloc] init];
+    }
+
+    colors = @[@0x00bd9b, @0x1bcd6c, @0x2c97de, @0x33495f, @0x00a186, @0xf2c500, @0xd83728];
+
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -71,7 +89,7 @@
 - (void)swipeRight:(UISwipeGestureRecognizer *)gesture
 {
     NSLog(@"Right Swipe received.");//Lets you know this method was called by gesture recognizer.
-    NSLog(@"Direction is: %lu", gesture.direction);//Lets you know the numeric value of the gesture direction for confirmation (1=right).
+    NSLog(@"Direction is: %u", gesture.direction);//Lets you know the numeric value of the gesture direction for confirmation (1=right).
     //only interested in gesture if gesture state == changed or ended (From Paul Hegarty @ standford U
     if ((gesture.state == UIGestureRecognizerStateChanged) ||
         (gesture.state == UIGestureRecognizerStateEnded)) {
@@ -85,7 +103,9 @@
     
     // Configure the cell...
     [cell.yomaLabel setText:[yomas objectAtIndex:indexPath.row]];
-    
+//    UIColor *cell_color = UIColorFromRGB([colors objectAtIndex:indexPath.row%7]);
+//    [cell setBackgroundColor: cell_color];
+
     return cell;
 }
 

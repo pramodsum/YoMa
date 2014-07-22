@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface YMViewController : UIViewController <UIGestureRecognizerDelegate>
+@interface YMViewController : UIViewController <UIGestureRecognizerDelegate, MFMessageComposeViewControllerDelegate>
+
+@property (strong, nonatomic) IBOutlet UIButton *YoMa_button;
+- (IBAction)send_YoMa:(id)sender;
 
 @end

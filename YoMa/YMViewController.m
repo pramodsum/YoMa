@@ -8,6 +8,7 @@
 
 #import "YMViewController.h"
 #import "YMTableViewController.h"
+#import <Parse/Parse.h>
 
 @interface YMViewController ()
 
@@ -47,8 +48,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Responding to gestures
+#pragma mark - Responding to gestures
 
 /*
  In response to a swipe gesture, show the image view appropriately then move the image view in the direction of the swipe as it fades out.
@@ -66,6 +66,63 @@
         (gesture.state == UIGestureRecognizerStateEnded)) {
         [self performSegueWithIdentifier:@"show_yomas_segue" sender:self];
     }
+}
+
+- (IBAction)send_YoMa:(id)sender {
+    // Create our Installation query
+    PFQuery *pushQuery = [PFInstallation query];
+    [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
+
+    // Send push notification to query
+    [PFPush sendPushMessageToQueryInBackground:pushQuery withMessage:@"YoMa"];
+
+    //SMS Notification until push works
+//    [self showSMS];
+}
+
+#pragma mark - Messages
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult) result
+{
+    switch (result) {
+        case MessageComposeResultCancelled:
+            break;
+
+        case MessageComposeResultFailed:
+        {
+            UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Failed to send SMS!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [warningAlert show];
+            break;
+        }
+
+        case MessageComposeResultSent:
+            break;
+
+        default:
+            break;
+    }
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)showSMS {
+
+    if(![MFMessageComposeViewController canSendText]) {
+        UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your device doesn't support SMS!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [warningAlert show];
+        return;
+    }
+
+    NSArray *recipents = @[@"2488777868"];
+    NSString *message = [NSString stringWithFormat:@"YoMa!"];
+
+    MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];
+    messageController.messageComposeDelegate = self;
+    [messageController setRecipients:recipents];
+    [messageController setBody:message];
+
+    // Present message view controller on screen
+    [self presentViewController:messageController animated:YES completion:nil];
 }
 
 @end
