@@ -82,8 +82,6 @@
     return [yomas count];
 }
 
-
-#pragma mark -
 #pragma mark Responding to gestures
 
 - (void)swipeRight:(UISwipeGestureRecognizer *)gesture

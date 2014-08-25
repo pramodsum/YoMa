@@ -60,7 +60,7 @@
 - (void)swipeLeft:(UISwipeGestureRecognizer *)gesture
 {
     NSLog(@"Left Swipe received.");//Lets you know this method was called by gesture recognizer.
-    NSLog(@"Direction is: %lu", gesture.direction);//Lets you know the numeric value of the gesture direction for confirmation (1=right).
+    NSLog(@"Direction is: %u", gesture.direction);//Lets you know the numeric value of the gesture direction for confirmation (1=right).
     //only interested in gesture if gesture state == changed or ended (From Paul Hegarty @ standford U
     if ((gesture.state == UIGestureRecognizerStateChanged) ||
         (gesture.state == UIGestureRecognizerStateEnded)) {
